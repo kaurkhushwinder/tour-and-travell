@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration:none;
+        /* font-family: "Google San Regular"; */
+        box-sizing: border-box;
+    }
+  body{
+    background-image:url(bg.jpeg);
+  }
+  header{
+    width: 100%;
+    height: 80px;
+    background: #11101b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+  }
+  .logo{
+    font-size: 28px;
+    font-weight: bold;
+    color: #fefefe;
+  }
+
+  .hamburger{
+    display: none;
+  }
+
+
+        
+    
+  
+  .nav-bar ul 
+  {
+    display: flex;
+  }
+  .nav-bar ul li a{
+    display: block;
+    color: #fefefe;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: 0.2s;
+    margin: 0 5px;
+  }
+  .nav-bar ul li a:hover{
+    color: #11101b;
+    background: #fefefe;
+  }
+  /* .nav-bar ul li a.active{
+    color: #11101b;
+    background: #fefefe;
+  } */
+   @media only screen and (max-width:1100px) {
+header{
+    padding: 0 50px;
+}
+   }
+   @media only screen and (max-width:1100px) {
+header{
+    padding: 0 30px;
+}
+   }
+   @media only screen and (max-width:900px) {
+.hamburger{
+    display: block;
+    cursor: pointer;
+}
+.hamburger .line{
+    width: 30px;
+    height: 3px;
+    background: #fefefe;
+    margin: 6px 0;
+}
+/* .nav-bar{
+    display: none;
+} */
+.nav-bar{
+    height: 0;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background: #11101b;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.nav-bar.active{
+    height: 450px;
+}
+.nav-bar ul{
+    display: block;
+    width: fit-content;
+    margin: 80px auto 0 auto;
+    text-align: center;
+    transition: 0.5s;
+    opacity: 0;
+}
+.nav-bar.active ul{
+   opacity: 1;
+}
+.nav-bar ul li a{
+    margin-bottom: 12px;
+}
+   }
+
+  /* ul li a
+           {
+            text-decoration: none;
+            color: black;
+           }
+           
+ul li 
+    {
+        background-color:#6B3F3e;
+        list-style:none;
+        float:left;
+        width:200px;
+        text-align:center;
+        height:60px;
+        line-height:60px;
+        border-radius:1px;
+        position: relative;
+        z-index: 5;
+        
+        
+    } */
+   
+
+</style>
+<body>
+<header>
+    <div class="logo"></div>
+    <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <nav class="nav-bar">
+        <ul>
+           <li>
+            <a href="#" class="active">Admin</a>
+           </li>
+           <li>
+               <a href="#">Add Detail</a>
+               <ul>
+                <!-- <li>Add Detail</li>
+                <li>Add Detail</li>
+                <li>Add Detail</li>
+                <li>Add Detail</li>
+                <li>Add Detail</li>
+                <li>Add Detail</li> -->
+            </ul>
+           </li> 
+           <li>
+            <a href="#">Edit Detail</a>
+            <ul>
+                <!-- <li></li>
+                <li></li>
+                <li></li>
+                <li></li> -->
+            </ul>
+           </li>
+           <li>
+            <a href="#">Check Booking Details</a>
+            <ul>
+                <!-- <li></li>
+                <li></li>
+                <li></li> -->
+            </ul>
+           </li>
+        </ul>
+    </nav>
+</header>
+
+        <?php 
+            if(isset($_GET['insert_tour_table']))
+            {
+              include('Add_tour.php');
+            }
+            if(isset($_GET['insert_tour_gallery_table']))
+            {
+                include('Add_tour_gallery.php');
+            }
+            if(isset($_GET['insert_concert_table']))
+            {
+              include('concert_table.php');
+            }
+            if(isset($_GET['insert_concert_type_table']))
+            {
+                include('concert_type_table.php');
+            }
+            if(isset($_GET['insert_wedding_features_table']))
+            {
+                include('wedding_features_table.php');
+            }
+            
+            if(isset($_GET['insert_concert_gallery_table']))
+            {
+                include('concert_gallery_table.php');
+            }
+            if(isset($_GET['insert_cocktails']))
+            {
+              include('cocktails.php;');
+            }
+            if(isset($_GET['insert_wedding_booking_table']))
+            {
+              include('wedding_booking_table.php');
+            }
+            if(isset($_GET['insert_decoration_table']))
+            {
+                include('decoration_table.php');
+            }
+            if(isset($_GET['insert_food_table']))
+            {
+                include('food_table.php');
+            }
+            if(isset($_GET['insert_display1']))
+            {
+                include('display1.php');
+            }
+
+            if(isset($_GET['insert_display2']))
+            {
+                include('display2.php');
+            }
+            if(isset($_GET['insert_display3']))
+            {
+                include('display3.php');
+            }
+            
+            if(isset($_GET['insert_display5']))
+            {
+                include('display5.php');
+            }
+            if(isset($_GET['insert_display6']))
+            {
+                include('display6.php');
+            }
+            if(isset($_GET['insert_display7']))
+            {
+                include('display7.php');
+            }
+            if(isset($_GET['insert_display8']))
+            {
+                include('display8.php');
+            }
+
+
+            if(isset($_GET['']))
+            {
+              include('');
+            }
+  
+           
+            ?>
+            <script>
+                hamburger = document.querySelector(".hamburger");
+                hamburger.onclick = function() {
+                    navBar = document.querySelector(".nav-bar");
+                    navBar.classList.toggle("active");
+                }
+            </script>
+</body>
+</html>
